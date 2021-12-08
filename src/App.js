@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 // Components
-// import Greeting from "./components/Greeting";
+import Greeting from "./components/Greeting";
 import Calculator from "./components/Calculator";
 
 function App() {
@@ -22,13 +22,14 @@ function App() {
 					Learn React
 				</a>
 
-				<Calculator firstValue={1} secondValue={2} operator={"suma"} />
+				<Greeting />
+				{/* <Calculator firstValue={1} secondValue={2} operator={"suma"} />
 				<Calculator
 					firstValue={4}
 					secondValue={2}
 					operator={"multiplicacion"}
 				/>
-				<Calculator firstValue={10} secondValue={2} operator={"restass"} />
+				<Calculator firstValue={10} secondValue={2} operator={"restass"} /> */}
 			</header>
 		</div>
 	);
