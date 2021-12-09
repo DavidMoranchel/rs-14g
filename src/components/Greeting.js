@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-const capitalizeWord = (word) => {
-	if (!word) {
-		return "";
-	}
-	return word[0].toUpperCase() + word.slice(1).toLowerCase();
-};
-
 function Greeting({ firstName, lastName = "" }) {
+	console.log("Paso 1 montaje");
 	const [fakeName, setFakeName] = useState("Manuel Ramos");
 	const [isLoading, setIsLoading] = useState(true);
-	console.log("Hola el componente se esta montando");
 
 	useEffect(() => {
-		setTimeout(() => {
-			console.log("Hola el componente ya cargo");
-			setIsLoading(false);
-		}, 4000);
+		console.log("commit de actualización");
+	});
+
+	useEffect(() => {
+		console.log("Paso 3 commit");
+		setIsLoading(false);
+		setFakeName("Other name");
 	}, []);
 
-	const _firstName = capitalizeWord(firstName);
-	const _lastName = capitalizeWord(lastName);
+	useEffect(() => {
+		console.log("commit de actualización del estado fakeName");
+	}, [fakeName]);
 
+	console.log("Paso 2 renderizado");
 	return (
 		<div>
 			<h1>Hola {fakeName}</h1>
