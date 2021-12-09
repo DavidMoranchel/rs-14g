@@ -7,10 +7,7 @@ import "./Counter.css";
 export default function Counter() {
 	const [counter, setCounter] = useState(0);
 
-	let colorCounter = "text-odd";
-	if (counter % 2 === 0) {
-		colorCounter = "text-even";
-	}
+	let colorCounter = counter % 2 === 0 ? "text-even" : "text-odd";
 
 	return (
 		<div>
