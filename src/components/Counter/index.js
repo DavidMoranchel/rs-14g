@@ -7,11 +7,14 @@ import "./Counter.css";
 export default function Counter() {
 	const [counter, setCounter] = useState(0);
 
+	let colorCounter = "text-odd";
+	if (counter % 2 === 0) {
+		colorCounter = "text-even";
+	}
+
 	return (
 		<div>
-			<p className={counter % 2 === 0 ? "text-even" : "text-odd"}>
-				Counter: {counter}
-			</p>
+			<p className={colorCounter}>Counter: {counter}</p>
 			<div className="container">
 				<button className="btn" onClick={() => setCounter(counter + 1)}>
 					Add
