@@ -14,3 +14,11 @@ li:hover {
 .li-active {
 	color: rgb(26, 87, 200);
 }
+
+.h1-active {
+	display: block;
+}
+
+.h1-inactive {
+	display: none;
+}
