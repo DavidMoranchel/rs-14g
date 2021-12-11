@@ -11,7 +11,6 @@ function NavBar() {
 	};
 
 	const checkActive = (itemID) => (active === itemID ? "li-active" : "");
-	// const checkActiveContent = (itemID) => (active === itemID ? true : false);
 
 	let content = "";
 	switch (active) {
@@ -48,16 +47,6 @@ function NavBar() {
 			<div>
 				<h1>{content}</h1>
 			</div>
-			{/* <div>
-				{checkActiveContent(1) ? <h1>Holi 1</h1> : null}
-				{checkActiveContent(2) ? <h1>Holi 2</h1> : null}
-				{checkActiveContent(3) ? <h1>Holi 3</h1> : null}
-			</div> */}
-			{/* <div>
-				<h1 className={checkActiveContent(1)}>Holi 1</h1>
-				<h1 className={checkActiveContent(2)}>Holi 2</h1>
-				<h1 className={checkActiveContent(3)}>Holi 3</h1>
-			</div> */}
 		</div>
 	);
 }

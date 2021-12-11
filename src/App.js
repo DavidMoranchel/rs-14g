@@ -2,6 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 
+// Components
+import UserName from "./components/UserName";
+
 const _users = [
 	{
 		id: 1,
@@ -36,32 +39,17 @@ function App() {
 		}, 3000);
 	}, []);
 
-	console.log(users);
+	const usersUI = users.map(({ id, firstName, lastName }) => (
+		<UserName key={id} firstName={firstName} lastName={lastName} />
+	));
 
 	return (
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
-
-				{users.map((user) => {
-					const _firstName = user.firstName.toUpperCase();
-					return (
-						<div key={user.id}>
-							<h1>
-								{_firstName} {user.lastName}
-							</h1>
-						</div>
-					);
-				})}
-
-				{users.map((user) => (
-					<div key={user.id}>
-						<h1>
-							{user.firstName} {user.lastName}
-						</h1>
-					</div>
-				))}
+				{usersUI}
 			</header>
+			<UserName firstName={"Fuera del"} lastName={"map"} />
 		</div>
 	);
 }
