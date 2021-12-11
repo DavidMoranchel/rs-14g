@@ -3,6 +3,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 // Components
+import NavBar from "./components/NavBar";
 import UserName from "./components/UserName";
 
 const _users = [
@@ -47,9 +48,9 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
+				<NavBar />
 				{usersUI}
 			</header>
-			<UserName firstName={"Fuera del"} lastName={"map"} />
 		</div>
 	);
 }
