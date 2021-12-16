@@ -7,6 +7,9 @@ import "./UsersNew.css";
 // Input
 import Input from "../../components/Input";
 
+// Services
+import { createUser } from "../../services/users";
+
 export default function UsersNew() {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -14,10 +17,35 @@ export default function UsersNew() {
 	const [occupation, setOccupation] = useState("");
 	const [birthdate, setBirthdate] = useState("");
 
+	const cleanForm = () => {
+		setFirstName("");
+		setLastName("");
+		setGender("");
+		setOccupation("");
+		setBirthdate("");
+	};
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		try {
+			const data = {
+				firstName,
+				lastName,
+				gender,
+				occupation,
+				birthdate,
+			};
+			await createUser(data);
+			cleanForm();
+		} catch (error) {
+			console.error(error.message);
+		}
+	};
+
 	return (
 		<div className="container flex-col">
 			<h1>Crea un usuario</h1>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<Input
 					id="firstName"
 					label="First Name"
@@ -44,6 +72,7 @@ export default function UsersNew() {
 					value={birthdate}
 					setValue={setBirthdate}
 				/>
+				<button type="submit">Crear</button>
 			</form>
 		</div>
 	);
