@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Pages
 import App from "./App";
 import Users from "./pages/Users";
+import UsersNew from "./pages/UsersNew";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
 			<Routes>
 				<Route path="/" element={<App />} />
 				<Route path="/users" element={<Users />} />
+				<Route path="/users/new" element={<UsersNew />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>,
