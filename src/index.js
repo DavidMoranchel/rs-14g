@@ -7,15 +7,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Pages
 import App from "./App";
 import Users from "./pages/Users";
+import Home from "./pages/Home";
 import UsersNew from "./pages/UsersNew";
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<App />} />
-				<Route path="/users" element={<Users />} />
-				<Route path="/users/new" element={<UsersNew />} />
+				<Route path="/" element={<App />}>
+					<Route index element={<Home />} />
+					<Route path="users" element={<Users />} />
+				</Route>
+				{/* <Route path="/users/new" element={<UsersNew />} /> */}
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>,
