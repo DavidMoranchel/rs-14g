@@ -15,7 +15,7 @@ export default function UserDetail() {
 			setUser(response);
 		};
 		get();
-	}, []);
+	}, [params.userID]);
 
 	return (
 		<div>
