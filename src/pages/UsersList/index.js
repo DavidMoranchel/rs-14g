@@ -38,8 +38,8 @@ export default function UsersList() {
 					<Li
 						key={id}
 						text={`${firstName} ${lastName}`}
-						buttonText="Actualizar"
-						callback={() => navigate(`${id}/update`)}
+						buttonText="Detalle"
+						callback={() => navigate(`${id}`)}
 					/>
 				))}
 			</ul>
