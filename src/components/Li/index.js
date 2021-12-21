@@ -1,12 +1,12 @@
 import React from "react";
 
-// RR
-import { useNavigate } from "react-router-dom";
-
-function Li({ text, route }) {
-	const navigate = useNavigate();
-
-	return <li onClick={(e) => navigate(route)}>{text}</li>;
+function Li({ text, buttonText, callback }) {
+	return (
+		<div>
+			{text}
+			<button onClick={callback}>{buttonText}</button>
+		</div>
+	);
 }
 
 export default Li;

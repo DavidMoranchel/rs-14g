@@ -24,4 +24,16 @@ const getUser = async (id) => {
 	return await response.json();
 };
 
-export { createUser, getUsers, getUser };
+const updateUser = async (id, data) => {
+	const response = await fetch(`${BASE_URL}users/${id}.json`, {
+		method: "PATCH",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+		// body: data,
+	});
+	return await response.json();
+};
+
+export { createUser, getUsers, getUser, updateUser };

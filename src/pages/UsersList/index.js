@@ -6,8 +6,13 @@ import { getUsers } from "../../services/users";
 // Components
 import Li from "../../components/Li";
 
+// RR
+import { useNavigate } from "react-router-dom";
+
 export default function UsersList() {
 	const [users, setUsers] = useState([]);
+
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const get = async () => {
@@ -32,8 +37,9 @@ export default function UsersList() {
 				{users.map(({ id, firstName, lastName }) => (
 					<Li
 						key={id}
-						route={`/users${id}`}
 						text={`${firstName} ${lastName}`}
+						buttonText="Actualizar"
+						callback={() => navigate(`${id}/update`)}
 					/>
 				))}
 			</ul>
