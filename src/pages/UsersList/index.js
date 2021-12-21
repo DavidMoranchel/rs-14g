@@ -30,7 +30,11 @@ export default function UsersList() {
 		<div>
 			<ul>
 				{users.map(({ id, firstName, lastName }) => (
-					<Li key={id} id={id} firstName={firstName} lastName={lastName} />
+					<Li
+						key={id}
+						route={`/users${id}`}
+						text={`${firstName} ${lastName}`}
+					/>
 				))}
 			</ul>
 		</div>
