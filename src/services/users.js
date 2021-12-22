@@ -31,9 +31,14 @@ const updateUser = async (id, data) => {
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify(data),
-		// body: data,
 	});
 	return await response.json();
 };
 
-export { createUser, getUsers, getUser, updateUser };
+const deleteUser = async (id) => {
+	return await fetch(`${BASE_URL}users/${id}.json`, {
+		method: "DELETE",
+	});
+};
+
+export { createUser, getUsers, getUser, updateUser, deleteUser };
