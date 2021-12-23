@@ -13,10 +13,7 @@ export default function AppContainer({ children }) {
 					Users
 				</Link>
 			</nav>
-			<div className="main-content">
-				Esto estará en todo lo que app contenga
-				{children}
-			</div>
+			<div className="main-content">{children}</div>
 		</div>
 	);
 }

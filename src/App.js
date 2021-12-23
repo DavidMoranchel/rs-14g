@@ -1,3 +1,5 @@
+import { Component } from "react";
+
 import "./App.css";
 
 import { Outlet } from "react-router-dom";
@@ -5,12 +7,22 @@ import { Outlet } from "react-router-dom";
 // Components
 import AppContainer from "./components/AppContainer";
 
-function App() {
-	return (
-		<AppContainer>
-			<Outlet />
-		</AppContainer>
-	);
+// function App() {
+// return (
+// 	<AppContainer>
+// 		<Outlet />
+// 	</AppContainer>
+// );
+// }
+
+class App extends Component {
+	render() {
+		return (
+			<AppContainer>
+				<Outlet />
+			</AppContainer>
+		);
+	}
 }
 
 export default App;
