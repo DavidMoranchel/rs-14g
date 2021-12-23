@@ -13,7 +13,10 @@ class Pet {
 		this.species = species;
 		this.breed = breed;
 		this.name = name;
-		this.owner = owner;
+		this.owner = {
+			firstName: "Daniel",
+			lastName: "Mijangos",
+		};
 	}
 
 	sleep() {
@@ -23,18 +26,43 @@ class Pet {
 	eat() {
 		return `${this.name} esta comiento`;
 	}
-}
 
-class Dog extends Pet {
-	constructor(breed, name, owner, pedigree) {
-		super("Canis ..", breed, name, owner);
-		this.pedigree = pedigree;
+	getOwnerFullName() {
+		return `${this.owner?.firstName} ${this.owner?.lastName}`;
 	}
 
-	bark() {
-		return "guauuu";
+	get ownerName() {
+		return this.getOwnerFullName();
+	}
+
+	set setOwnerName(owner) {
+		if (typeof owner !== "object") {
+			throw new Error("Invalid property.");
+		}
+		this.owner = owner;
 	}
 }
+
+class Calculator {
+	static resultMessage = "El resultado es:";
+
+	static sum(a, b) {
+		return `${this.resultMessage} ${a + b}`;
+	}
+}
+
+// instance.owner
+
+// class Dog extends Pet {
+// 	constructor(breed, name, owner, pedigree) {
+// 		super("Canis ..", breed, name, owner);
+// 		this.pedigree = pedigree;
+// 	}
+
+// 	bark() {
+// 		return "guauuu";
+// 	}
+// }
 
 // Perro
 // - HERECIA: Pet
